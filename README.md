@@ -16,7 +16,7 @@ A complete web-based **Hospital Management System** built using **Python (Flask)
 ---
 
 ## 🛠️ Tech Stack
-* **Backend**: Python, Flask, In-memory storage / SQLite
+* **Backend**: Python, Flask, SQLite
 * **Frontend**: HTML5, CSS3, Bootstrap 5
 * **Version Control**: Git & GitHub
 
@@ -25,25 +25,30 @@ A complete web-based **Hospital Management System** built using **Python (Flask)
 ## ⚙️ Installation & Setup Guide
 
 Follow these steps to run the project locally on your machine:
+
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/ritikahooda13/Hospital-Management-System.git](https://github.com/ritikahooda13/Hospital-Management-System.git)
-   cd Hospital-Management-System
+   cd Hospital-Management-SystemInstall dependencies (Flask):
 
-   pip install Flask
+Bash
+pip install Flask
+Run the application:
 
-   python app.py
+Bash
+python app.py
+Access in your browser:
+Open your browser and navigate to: http://127.0.0.1:5002
 
-   [http://127.0.0.1:5002](http://127.0.0.1:5002)
-
-   Login Credentials:
+Login Credentials:
 
 Username: admin
 
 Password: admin
 
+📂 Project Structure
+Plaintext
 Hospital-Management-System/
-│
 ├── templates/
 │   ├── dashboard.html
 │   ├── login.html
@@ -52,6 +57,5 @@ Hospital-Management-System/
 │   ├── appointments.html
 │   ├── billing.html
 │   └── prescriptions.html
-│
 ├── app.py
 └── hospital.db
