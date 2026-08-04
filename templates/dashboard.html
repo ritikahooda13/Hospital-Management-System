@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Hospital Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 bg-blue-800 text-white flex flex-col">
+        <div class="p-5 text-2xl font-bold tracking-wider">MediCare HMS</div>
+        <nav class="flex-1 px-4 space-y-2 mt-4">
+            <a href="/" class="block py-2.5 px-4 rounded bg-blue-900">Dashboard</a>
+            <a href="/patients" class="block py-2.5 px-4 rounded hover:bg-blue-700 transition">Patients</a>
+            <a href="/doctors" class="block py-2.5 px-4 rounded hover:bg-blue-700 transition">Doctors</a>
+            <a href="/appointments" class="block py-2.5 px-4 rounded hover:bg-blue-700 transition">Appointments</a>
+            <a href="/billing" class="block py-2.5 px-4 rounded hover:bg-blue-700 transition">Billing</a>
+        </nav>
+        <div class="p-4">
+            <a href="/logout" class="block text-center py-2 bg-red-600 rounded hover:bg-red-700 transition">Logout</a>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-y-auto">
+        <header class="bg-white shadow p-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800">Admin Dashboard</h1>
+            <span class="text-gray-600">Welcome, <b>{{ session.username }}</b></span>
+        </header>
+        <main class="p-6">
+            <div class="grid grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-500">
+                    <h3 class="text-gray-500 text-sm font-semibold">Total Patients</h3>
+                    <p class="text-3xl font-bold text-gray-800 mt-2">{{ patients }}</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+                    <h3 class="text-gray-500 text-sm font-semibold">Total Doctors</h3>
+                    <p class="text-3xl font-bold text-gray-800 mt-2">{{ doctors }}</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-yellow-500">
+                    <h3 class="text-gray-500 text-sm font-semibold">Appointments</h3>
+                    <p class="text-3xl font-bold text-gray-800 mt-2">{{ appointments }}</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

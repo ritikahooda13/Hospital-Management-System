@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients - Hospital Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex h-screen">
+    <div class="w-64 bg-blue-800 text-white flex flex-col">
+        <div class="p-5 text-2xl font-bold">MediCare HMS</div>
+        <nav class="flex-1 px-4 space-y-2 mt-4">
+            <a href="/" class="block py-2.5 px-4 rounded hover:bg-blue-700">Dashboard</a>
+            <a href="/patients" class="block py-2.5 px-4 rounded bg-blue-900">Patients</a>
+            <a href="/doctors" class="block py-2.5 px-4 rounded hover:bg-blue-700">Doctors</a>
+            <a href="/appointments" class="block py-2.5 px-4 rounded hover:bg-blue-700">Appointments</a>
+            <a href="/billing" class="block py-2.5 px-4 rounded hover:bg-blue-700">Billing</a>
+        </nav>
+        <div class="p-4"><a href="/logout" class="block text-center py-2 bg-red-600 rounded">Logout</a></div>
+    </div>
+    <div class="flex-1 flex flex-col overflow-y-auto p-6">
+        <h2 class="text-2xl font-bold mb-6">Manage Patients</h2>
+        <!-- Add Patient Form -->
+        <form method="POST" class="bg-white p-6 rounded shadow mb-6 grid grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-bold mb-1">Name</label>
+                <input type="text" name="name" required class="w-full border p-2 rounded">
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1">Age</label>
+                <input type="number" name="age" required class="w-full border p-2 rounded">
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1">Gender</label>
+                <select name="gender" class="w-full border p-2 rounded"><option>Male</option><option>Female</option><option>Other</option></select>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1">Phone</label>
+                <input type="text" name="phone" required class="w-full border p-2 rounded">
+            </div>
+            <div class="col-span-2">
+                <label class="block text-sm font-bold mb-1">Medical History</label>
+                <textarea name="medical_history" class="w-full border p-2 rounded"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded col-span-2 hover:bg-blue-700">Add Patient</button>
+        </form>
+        <!-- Patients Table -->
+        <div class="bg-white rounded shadow overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead><tr class="bg-gray-200"><th class="p-3">ID</th><th class="p-3">Name</th><th class="p-3">Age</th><th class="p-3">Gender</th><th class="p-3">Phone</th><th class="p-3">History</th></tr></thead>
+                <tbody>
+                    {% for p in patients %}
+                    <tr class="border-t"><td class="p-3">{{ p.id }}</td><td class="p-3">{{ p.name }}</td><td class="p-3">{{ p.age }}</td><td class="p-3">{{ p.gender }}</td><td class="p-3">{{ p.phone }}</td><td class="p-3">{{ p.medical_history }}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
